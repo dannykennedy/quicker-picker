@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
-import { simpleHues, simpleShades, getAssociatedColors } from './modules/flatColors';
-import { getCirclePoints } from './modules/pointsOnCircle';
-import PickedColors from './PickedColors';
-import { colorStringsAreEqual } from './modules/colorStringHelpers';
-import Animate from './Animate';
-import ColorPie from './ColorPie';
-import { PickerButton, buttonTypes } from './PickerButtons';
-import CircleSwatch from './CircleSwatch';
-import { colorStringToHsl } from './modules/colorEncode';
+import React, { useState } from "react";
+import {
+  simpleHues,
+  simpleShades,
+  getAssociatedColors,
+} from "./modules/flatColors";
+import { getCirclePoints } from "./modules/pointsOnCircle";
+import PickedColors from "./PickedColors";
+import { colorStringsAreEqual } from "./modules/colorStringHelpers";
+import Animate from "./Animate";
+import ColorPie from "./ColorPie";
+import { PickerButton, buttonTypes } from "./PickerButtons";
+import CircleSwatch from "./CircleSwatch";
+import { colorStringToHsl } from "./modules/colorEncode";
 
 const advancedModeButtons = [buttonTypes.BACK, buttonTypes.CONFIRM];
 
 const ColorPicker = ({ onSetColor }) => {
   const [selectedColors, setSelectedColors] = useState([]);
-  const [selectedSimpleColor, setSelectedSimpleColor] = useState('');
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSimpleColor, setSelectedSimpleColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
   const [associatedColors, setAssociatedColors] = useState([]);
   const [showingButtons, setShowingButtons] = useState([]);
 
   // Put picker back to original state (but keep selected colors);
   const resetPicker = () => {
-    setSelectedColor('');
-    setSelectedSimpleColor('');
+    setSelectedColor("");
+    setSelectedSimpleColor("");
     setShowingButtons([]);
     setAssociatedColors([]);
   };
@@ -53,7 +57,7 @@ const ColorPicker = ({ onSetColor }) => {
     resetPicker();
   };
 
-  const simpleMode = selectedColor === '';
+  const simpleMode = selectedColor === "";
 
   const circleWidthPercent = 28;
   const selectedCircleWidthPercent = 30;
@@ -64,10 +68,27 @@ const ColorPicker = ({ onSetColor }) => {
   const rOuter = outerCircleWidth / 2; // Radius of outer circle
   const rInner = innerCircleWidth / 2; // Radius of inner circle
   const rButtons = buttonCircleWidth / 2;
-  const outerCirclePoints = getCirclePoints(simpleHues.length, rOuter, rOuter, rOuter, true);
-  const innerCirclePoints = getCirclePoints(simpleShades.length, rInner, rOuter, rOuter);
+  const outerCirclePoints = getCirclePoints(
+    simpleHues.length,
+    rOuter,
+    rOuter,
+    rOuter,
+    true
+  );
+  const innerCirclePoints = getCirclePoints(
+    simpleShades.length,
+    rInner,
+    rOuter,
+    rOuter
+  );
   const buttonCirclePoints = getCirclePoints(4, rButtons, rOuter, rOuter, true);
-  const buttonStartCirclePoints = getCirclePoints(4, rOuter, rOuter, rOuter, true);
+  const buttonStartCirclePoints = getCirclePoints(
+    4,
+    rOuter,
+    rOuter,
+    rOuter,
+    true
+  );
   const associatedCirclePoints = getCirclePoints(
     associatedColors.length,
     rOuter,
@@ -77,7 +98,9 @@ const ColorPicker = ({ onSetColor }) => {
     true
   );
   const radius = Math.ceil(((outerCircleWidth / 100) * circleWidthPercent) / 2);
-  const largeCircleRadius = Math.ceil(((outerCircleWidth / 100) * selectedCircleWidthPercent) / 2);
+  const largeCircleRadius = Math.ceil(
+    ((outerCircleWidth / 100) * selectedCircleWidthPercent) / 2
+  );
   const buttonRadius = ((outerCircleWidth / 100) * buttonWidthPercent) / 2;
 
   // Combine coordinates for shades and hues
@@ -138,7 +161,10 @@ const ColorPicker = ({ onSetColor }) => {
                   <Animate
                     key={`color-${simpleMode}-${i}`}
                     startCoords={[rOuter - radius, rOuter - radius]}
-                    endCoords={[simplePoints[i].x - radius, simplePoints[i].y - radius]}
+                    endCoords={[
+                      simplePoints[i].x - radius,
+                      simplePoints[i].y - radius,
+                    ]}
                   >
                     <ColorPie
                       color={color}
@@ -149,7 +175,9 @@ const ColorPicker = ({ onSetColor }) => {
                       onCircleClick={(colorString) => {
                         setSelectedSimpleColor(color.simpleOpts.id);
                         setSelectedColor(colorString);
-                        onSetAssociatedColors(getAssociatedColors(color.simpleOpts.id));
+                        onSetAssociatedColors(
+                          getAssociatedColors(color.simpleOpts.id)
+                        );
                         setShowingButtons(advancedModeButtons);
                       }}
                     />
@@ -175,7 +203,10 @@ const ColorPicker = ({ onSetColor }) => {
                       fromSimpleColor={selectedSimpleColor}
                       radius={radius}
                       simpleMode={simpleMode}
-                      circleCoords={[associatedCirclePoints[i].x, associatedCirclePoints[i].y]}
+                      circleCoords={[
+                        associatedCirclePoints[i].x,
+                        associatedCirclePoints[i].y,
+                      ]}
                       centreCoords={[rOuter, rOuter]}
                       onCircleClick={(colorString) => {
                         setSelectedColor(colorString);
@@ -197,7 +228,7 @@ const ColorPicker = ({ onSetColor }) => {
                 }}
                 icon="tick"
                 style={{
-                  position: 'absolute',
+                  position: "absolute",
                   left: rOuter - largeCircleRadius,
                   top: rOuter - largeCircleRadius,
                 }}
@@ -206,7 +237,16 @@ const ColorPicker = ({ onSetColor }) => {
           </div>
         </div>
       </div>
-      <PickedColors radius={radius} selectedColors={selectedColors} onSwatchClick={onDeleteColor} />
+      <PickedColors
+        radius={radius}
+        selectedColors={selectedColors}
+        onSwatchClick={onDeleteColor}
+      />
+      <div style={{ color: "black" }}>
+        {selectedColors.map((c) => {
+          return <p>{c}</p>;
+        })}
+      </div>
     </div>
   );
 };
