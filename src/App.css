@@ -1,8 +1,9 @@
 .App {
   display: flex;
   justify-content: center;
-  color: white;
+  color: #ddd;
   box-sizing: border-box;
+  background-color: #12263f;
 }
 
 .color-picker-select-wrapper {

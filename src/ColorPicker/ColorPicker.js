@@ -242,7 +242,7 @@ const ColorPicker = ({ onSetColor }) => {
         selectedColors={selectedColors}
         onSwatchClick={onDeleteColor}
       />
-      <div style={{ color: "black" }}>
+      <div>
         {selectedColors.map((c) => {
           return <p>{c}</p>;
         })}
