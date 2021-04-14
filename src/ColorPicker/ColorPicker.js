@@ -244,7 +244,7 @@ const ColorPicker = ({ onSetColor }) => {
       />
       <div>
         {selectedColors.map((c) => {
-          return <p>{c}</p>;
+          return <p key={c}>{c}</p>;
         })}
       </div>
     </div>

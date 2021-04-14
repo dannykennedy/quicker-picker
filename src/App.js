@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import ColorSelect from "./ColorPicker/ColorSelect";
 import "./App.css";
 

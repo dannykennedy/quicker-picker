@@ -4,13 +4,14 @@
   color: #ddd;
   box-sizing: border-box;
   background-color: #12263f;
+  min-height: 100vh;
 }
 
 .color-picker-select-wrapper {
   border-radius: 10px;
   width: 100%;
   max-width: 350px;
-  padding: 20px;
+  padding: 50px 0px 20px 0px;
 }
 
 .color-picker-button-area {
