@@ -1,6 +1,11 @@
 import React from "react";
 import { BUTTON_TEXT_COLOR } from "./modules/colorConstants";
-import { BackArrow, TickIcon, DeleteIcon, TrashSolidIcon } from "../Icons";
+import {
+  BackArrow,
+  TickIcon,
+  DeleteIcon,
+  TrashSolidIcon as Trash,
+} from "../Icons";
 
 export const buttonTypes = {
   CONFIRM: "confirm",
@@ -18,6 +23,15 @@ export const PickerButton = ({
   const diameter = radius * 2;
   const iconWidth = Math.floor((diameter / 9) * 4);
 
+  console.log("dia", diameter, iconWidth);
+
+  const iconStyle = {
+    height: iconWidth,
+    width: iconWidth,
+    color: BUTTON_TEXT_COLOR,
+    position: "absolute",
+  };
+
   return (
     <button
       onClick={() => {
@@ -31,42 +45,10 @@ export const PickerButton = ({
         cursor: "pointer",
       }}
     >
-      {buttonType === buttonTypes.CONFIRM && (
-        <TickIcon
-          style={{
-            height: iconWidth,
-            width: iconWidth,
-            color: BUTTON_TEXT_COLOR,
-          }}
-        />
-      )}
-      {buttonType === buttonTypes.BACK && (
-        <BackArrow
-          style={{
-            height: iconWidth,
-            width: iconWidth,
-            color: BUTTON_TEXT_COLOR,
-          }}
-        />
-      )}
-      {buttonType === buttonTypes.CANCEL && (
-        <DeleteIcon
-          style={{
-            height: iconWidth,
-            width: iconWidth,
-            color: BUTTON_TEXT_COLOR,
-          }}
-        />
-      )}
-      {buttonType === buttonTypes.DELETE && (
-        <TrashSolidIcon
-          style={{
-            height: iconWidth,
-            width: iconWidth,
-            color: BUTTON_TEXT_COLOR,
-          }}
-        />
-      )}
+      {buttonType === buttonTypes.CONFIRM && <TickIcon style={iconStyle} />}
+      {buttonType === buttonTypes.BACK && <BackArrow style={iconStyle} />}
+      {buttonType === buttonTypes.CANCEL && <DeleteIcon style={iconStyle} />}
+      {buttonType === buttonTypes.DELETE && <Trash style={iconStyle} />}
     </button>
   );
 };

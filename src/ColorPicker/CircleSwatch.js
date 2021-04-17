@@ -30,8 +30,8 @@ const CircleSwatch = ({
     <div
       style={{
         ...style,
-        width: diameter - TOTAL_BORDER_WIDTH,
-        height: diameter - TOTAL_BORDER_WIDTH,
+        width: diameter,
+        height: diameter,
       }}
     >
       <div

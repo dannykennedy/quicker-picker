@@ -14,7 +14,7 @@ const PickedColors = ({ selectedColors, radius, onDeleteColor }) => {
               <div
                 key={c}
                 style={{
-                  margin: `0px 20px 10px 0px`,
+                  margin: `0px 10px 10px 0px`,
                   display: "inline-block",
                 }}
               >
