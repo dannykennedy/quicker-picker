@@ -1,8 +1,14 @@
-import React from 'react';
-import { Sparkles } from './Sparkles';
-import { isMetallic } from './modules/colorStringHelpers';
-import { DeleteIcon, TickIcon } from '../Icons';
-import { SELECTED_BORDER_COLOR } from './modules/colorConstants';
+import React, { useState } from "react";
+import { Sparkles } from "./Sparkles";
+import { isMetallic } from "./modules/colorStringHelpers";
+import { DeleteIcon, TickIcon } from "../Icons";
+import { SELECTED_BORDER_COLOR } from "./modules/colorConstants";
+import { PickerButton, buttonTypes } from "./PickerButtons";
+import { getCirclePoints } from "./modules/pointsOnCircle";
+import AnimatedPickerButton from "./AnimatedPickerButton";
+
+const BORDER_WIDTH = 5;
+const TOTAL_BORDER_WIDTH = BORDER_WIDTH * 2;
 
 const CircleSwatch = ({
   hex,
@@ -13,66 +19,71 @@ const CircleSwatch = ({
   isSelected,
   style,
   icon,
+  onDeleteColor,
 }) => {
+  const [isOutlined, setIsOutlined] = useState(isSelected);
+  const [showingButtons, setShowingButtons] = useState(false);
+
+  const buttonCirclePoints = getCirclePoints(4, radius, radius, radius, true);
+
   const metallic = isMetallic(colorString);
 
   const diameter = radius * 2;
+  const buttonRadius = Math.floor(radius * (3 / 7));
 
   return (
-    <div style={{ ...style }}>
+    <div
+      style={{
+        ...style,
+        width: diameter - TOTAL_BORDER_WIDTH,
+        height: diameter - TOTAL_BORDER_WIDTH,
+      }}
+    >
       <div
         className="color-picker-swatch"
         style={{
-          width: diameter,
-          height: diameter,
+          cursor: "pointer",
+          width: diameter - TOTAL_BORDER_WIDTH,
+          height: diameter - TOTAL_BORDER_WIDTH,
         }}
       >
         {metallic && <Sparkles />}
         <div
-          className="color-picker-delete-icon"
-          onClick={onSwatchClick}
-          style={{
-            position: 'absolute',
-            width: diameter,
-            height: diameter,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 3,
+          onClick={() => {
+            onSwatchClick && onSwatchClick();
+            setShowingButtons(true);
           }}
-        >
-          {icon === 'tick' ? (
-            <TickIcon width={radius} height={radius} style={{ color: 'white' }} />
-          ) : (
-            <DeleteIcon width={radius} height={radius} style={{ color: 'white' }} />
-          )}
-        </div>
-        {isSelected && (
-          <div
-            className="color-picker-swatch-border"
-            style={{
-              width: diameter + 8,
-              height: diameter + 8,
-              backgroundColor: SELECTED_BORDER_COLOR,
-              borderRadius: '50%',
-              position: 'absolute',
-              top: -4,
-              left: -4,
-              zIndex: 1,
-            }}
-          ></div>
-        )}
-        <div
+          onMouseEnter={() => {
+            setIsOutlined(true);
+          }}
+          onMouseOut={() => {
+            if (!isSelected) {
+              setIsOutlined(false);
+            }
+          }}
           style={{
-            width: diameter,
-            height: diameter,
-            borderRadius: '50%',
+            width: diameter - TOTAL_BORDER_WIDTH,
+            height: diameter - TOTAL_BORDER_WIDTH,
+            borderRadius: "50%",
+            borderWidth: BORDER_WIDTH,
+            borderStyle: "solid",
+            borderColor: isOutlined ? SELECTED_BORDER_COLOR : "transparent",
             backgroundColor: displayColor,
-            position: 'absolute',
+            position: "absolute",
             zIndex: 2,
           }}
-        ></div>
+        />
       </div>
+      {showingButtons && (
+        <AnimatedPickerButton
+          startCoords={[diameter - 5, 5]}
+          endCoords={[diameter, 0]}
+          buttonRadius={buttonRadius}
+          buttonType={"cancel"}
+          onButtonClick={onDeleteColor}
+          backgroundColor={"#333"}
+        />
+      )}
     </div>
   );
 };

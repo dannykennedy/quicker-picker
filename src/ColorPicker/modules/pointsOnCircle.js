@@ -29,10 +29,11 @@ export const getCirclePoints = (
 
       let x = centreX + radius * Math.cos(theta);
       let y = centreY + radius * Math.sin(theta);
-      return { x: x, y: y };
+      return [x, y];
     });
 
-  const rotateAmount = Math.ceil(points.length / 4) + Math.ceil(points.length / 2);
+  const rotateAmount =
+    Math.ceil(points.length / 4) + Math.ceil(points.length / 2);
 
   const rotatedPoints = rotateArray(points, rotateAmount);
 

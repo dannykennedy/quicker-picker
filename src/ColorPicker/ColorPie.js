@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   colorTemperatures,
   SELECTED_BORDER_COLOR,
@@ -18,8 +18,9 @@ const ColorPie = ({
   radius,
   fromSimpleColor,
 }) => {
-  const singleColorOnly = simpleMode;
-  const colorTints = singleColorOnly ? [color] : color.tints;
+  const [outlinedSegments, setOutlinedSegments] = useState([]);
+
+  const colorTints = simpleMode ? [color] : color.tints;
   const colorTemperature = colorTints[0].colorTemperature;
 
   // Array of colors based on base color and tints
@@ -41,7 +42,12 @@ const ColorPie = ({
 
   return (
     <div
-      style={{ position: "relative", width: radius * 2, height: radius * 2 }}
+      style={{
+        position: "relative",
+        cursor: "pointer",
+        width: radius * 2,
+        height: radius * 2,
+      }}
     >
       <div style={{ position: "absolute" }}>
         <svg

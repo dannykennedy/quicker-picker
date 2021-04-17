@@ -12,6 +12,8 @@ import ColorPie from "./ColorPie";
 import { PickerButton, buttonTypes } from "./PickerButtons";
 import CircleSwatch from "./CircleSwatch";
 import { colorStringToHsl } from "./modules/colorEncode";
+import AnimatedColorPie from "./AnimatedColorPie";
+import AnimatedPickerButton from "./AnimatedPickerButton";
 
 const advancedModeButtons = [buttonTypes.BACK, buttonTypes.CONFIRM];
 
@@ -131,26 +133,16 @@ const ColorPicker = ({ onSetColor }) => {
           >
             {showingButtons.map((btnType, i) => {
               return (
-                <Animate
+                <AnimatedPickerButton
                   key={`btn-${simpleMode}-${i}`}
-                  startCoords={[
-                    buttonStartCirclePoints[i].x - buttonRadius,
-                    buttonStartCirclePoints[i].y - buttonRadius,
-                  ]}
-                  endCoords={[
-                    buttonCirclePoints[i].x - buttonRadius,
-                    buttonCirclePoints[i].y - buttonRadius,
-                  ]}
-                >
-                  <PickerButton
-                    buttonType={btnType}
-                    radius={buttonRadius}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      buttonFuncs[btnType]();
-                    }}
-                  />
-                </Animate>
+                  startCoords={buttonStartCirclePoints[i]}
+                  endCoords={buttonCirclePoints[i]}
+                  buttonType={btnType}
+                  buttonRadius={buttonRadius}
+                  onButtonClick={() => {
+                    buttonFuncs[btnType]();
+                  }}
+                />
               );
             })}
 
@@ -158,30 +150,24 @@ const ColorPicker = ({ onSetColor }) => {
             {simpleMode &&
               simpleColors.map((color, i) => {
                 return (
-                  <Animate
+                  <AnimatedColorPie
                     key={`color-${simpleMode}-${i}`}
-                    startCoords={[rOuter - radius, rOuter - radius]}
-                    endCoords={[
-                      simplePoints[i].x - radius,
-                      simplePoints[i].y - radius,
-                    ]}
-                  >
-                    <ColorPie
-                      color={color}
-                      selectedColor={selectedColor}
-                      radius={radius}
-                      fromSimpleColor={color.simpleOpts.id}
-                      simpleMode={simpleMode}
-                      onCircleClick={(colorString) => {
-                        setSelectedSimpleColor(color.simpleOpts.id);
-                        setSelectedColor(colorString);
-                        onSetAssociatedColors(
-                          getAssociatedColors(color.simpleOpts.id)
-                        );
-                        setShowingButtons(advancedModeButtons);
-                      }}
-                    />
-                  </Animate>
+                    color={color}
+                    radius={radius}
+                    selectedColor={selectedColor}
+                    simpleMode={simpleMode}
+                    fromSimpleColor={color.simpleOpts.id}
+                    onCircleClick={(colorString) => {
+                      setSelectedSimpleColor(color.simpleOpts.id);
+                      setSelectedColor(colorString);
+                      onSetAssociatedColors(
+                        getAssociatedColors(color.simpleOpts.id)
+                      );
+                      setShowingButtons(advancedModeButtons);
+                    }}
+                    startCoords={[rOuter, rOuter]}
+                    endCoords={simplePoints[i]}
+                  />
                 );
               })}
             {/* Circle of 'associated' complex colours */}
@@ -189,30 +175,19 @@ const ColorPicker = ({ onSetColor }) => {
               associatedColors.length > 0 &&
               associatedColors.map((color, i) => {
                 return (
-                  <Animate
+                  <AnimatedColorPie
                     key={`color-${simpleMode}-${i}`}
-                    startCoords={[rOuter - radius, rOuter - radius]}
-                    endCoords={[
-                      associatedCirclePoints[i].x - radius,
-                      associatedCirclePoints[i].y - radius,
-                    ]}
-                  >
-                    <ColorPie
-                      color={color}
-                      selectedColor={selectedColor}
-                      fromSimpleColor={selectedSimpleColor}
-                      radius={radius}
-                      simpleMode={simpleMode}
-                      circleCoords={[
-                        associatedCirclePoints[i].x,
-                        associatedCirclePoints[i].y,
-                      ]}
-                      centreCoords={[rOuter, rOuter]}
-                      onCircleClick={(colorString) => {
-                        setSelectedColor(colorString);
-                      }}
-                    />
-                  </Animate>
+                    color={color}
+                    radius={radius}
+                    selectedColor={selectedColor}
+                    simpleMode={simpleMode}
+                    fromSimpleColor={selectedSimpleColor}
+                    onCircleClick={(colorString) => {
+                      setSelectedColor(colorString);
+                    }}
+                    startCoords={[rOuter, rOuter]}
+                    endCoords={associatedCirclePoints[i]}
+                  />
                 );
               })}
             {/* Selected colour circle in the middle */}
@@ -240,7 +215,7 @@ const ColorPicker = ({ onSetColor }) => {
       <PickedColors
         radius={radius}
         selectedColors={selectedColors}
-        onSwatchClick={onDeleteColor}
+        onDeleteColor={onDeleteColor}
       />
       <div>
         {selectedColors.map((c) => {

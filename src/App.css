@@ -25,11 +25,9 @@
 .color-picker-button {
   border-radius: 50%;
   border: none;
-  background-color: hsl(213, 5%, 24%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .color-circle-area {
@@ -70,4 +68,9 @@
 .color-picker-delete-icon:hover {
   opacity: 0.8;
   transition: 0.3s;
+}
+
+.color-picker-swatch-border {
+  border-radius: 50%;
+  position: absolute;
 }

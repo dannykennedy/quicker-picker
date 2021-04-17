@@ -150,7 +150,7 @@ export const complexColorNames = {
   darkRoyalBlue: "dark royal blue",
   lightSlateBlue: "light slate blue",
   slateBlue: "slate blue",
-  darkSlateBlue: "dark slate blue",
+  darkSlateBlue: "midnight blue",
 
   // Blue-purple
   lightPurpleBlue: "light purple-blue",
