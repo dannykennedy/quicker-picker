@@ -1,5 +1,5 @@
-import { colorList } from './colorList';
-import { stringifyHsl } from './colorHelpers';
+import { colorList } from "./colorList";
+import { stringifyHsl } from "./colorStringHelpers";
 
 export const stringifyColor = (name, fromSimpleColor, hsl) => {
   return `${name} (${fromSimpleColor}) ${hsl}`;
@@ -12,13 +12,15 @@ export const parseColorString = (colorString) => {
 
   if (!found) {
     return {
-      color: '',
-      fromSimpleColor: '',
-      hex: '',
+      color: "",
+      fromSimpleColor: "",
+      hex: "",
     };
   }
 
-  const [color, fromSimpleColor, hex] = found.slice(1, found.length).map((x) => x.trim());
+  const [color, fromSimpleColor, hex] = found
+    .slice(1, found.length)
+    .map((x) => x.trim());
 
   const ret = {
     color,
@@ -34,8 +36,10 @@ export const colorStringToHsl = (colorString) => {
   const match = colorList[color];
 
   if (!match) {
-    console.log('Faulty colorString', colorString);
-    throw new Error(`No color found matching ${color}, in colorString ${colorString}`);
+    console.log("Faulty colorString", colorString);
+    throw new Error(
+      `No color found matching ${color}, in colorString ${colorString}`
+    );
   }
 
   return stringifyHsl(...match.hsl);
