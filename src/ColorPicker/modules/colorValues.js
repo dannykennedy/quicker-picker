@@ -74,7 +74,7 @@ export const s = {
   PINK: 80,
   DESAT_PINK: 35,
   RED: 75,
-  DESAT_RED: 47,
+  DESAT_RED: 43,
   ORANGE_RED: 75,
   DESAT_ORANGE_RED: 40,
   ORANGE: 85,

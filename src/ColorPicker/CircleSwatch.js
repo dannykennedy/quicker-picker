@@ -22,7 +22,7 @@ const CircleSwatch = ({
   const metallic = isMetallic(colorString);
 
   const diameter = radius * 2;
-  const buttonRadius = Math.floor(radius * (3 / 7));
+  const buttonRadius = Math.floor(radius * (4 / 7));
 
   const borderColorStyle =
     isSelected || forceOutline ? { borderColor: SELECTED_BORDER_COLOR } : {};
@@ -67,12 +67,13 @@ const CircleSwatch = ({
       </div>
       {isSelected && (
         <AnimatedPickerButton
-          startCoords={[diameter - 5, 5]}
-          endCoords={[diameter, 0]}
+          startCoords={[diameter - buttonRadius, buttonRadius]}
+          endCoords={[diameter - 5, 5]}
           buttonRadius={buttonRadius}
           buttonType={"cancel"}
           onButtonClick={onDeleteColor}
-          backgroundColor={"#333"}
+          backgroundColor={"#BBB"}
+          iconColor={"#333"}
           speed={0.2}
         />
       )}

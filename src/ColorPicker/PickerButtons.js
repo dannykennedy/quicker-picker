@@ -19,6 +19,7 @@ export const PickerButton = ({
   radius,
   buttonType,
   backgroundColor,
+  iconColor,
 }) => {
   const diameter = radius * 2;
   const iconWidth = Math.floor((diameter / 9) * 4);
@@ -26,7 +27,7 @@ export const PickerButton = ({
   const iconStyle = {
     height: iconWidth,
     width: iconWidth,
-    color: BUTTON_TEXT_COLOR,
+    color: iconColor || BUTTON_TEXT_COLOR,
     position: "absolute",
   };
 

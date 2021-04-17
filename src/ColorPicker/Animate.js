@@ -14,8 +14,8 @@ const Animate = ({ endCoords, startCoords, children, speed }) => {
   const [endX, endY] = endCoords;
 
   const moveAnimation = keyframes`
-    0% { left: ${startX}px; top: ${startY}px; }
-    100% { left: ${endX}px; top: ${endY}px; }
+    0% { left: ${startX}px; top: ${startY}px; opacity: 0; z-index: 10 }
+    100% { left: ${endX}px; top: ${endY}px; opacity: 1; z-index: 10 }
 `;
 
   const animation = (props) => {

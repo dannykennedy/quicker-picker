@@ -9,6 +9,7 @@ const AnimatedPickerButton = ({
   buttonType,
   onButtonClick,
   backgroundColor,
+  iconColor,
   speed,
 }) => {
   const [startX, startY] = startCoords;
@@ -25,6 +26,7 @@ const AnimatedPickerButton = ({
         radius={buttonRadius}
         onClick={onButtonClick}
         backgroundColor={backgroundColor}
+        iconColor={iconColor}
       />
     </Animate>
   );
