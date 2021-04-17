@@ -17,6 +17,7 @@ const advancedModeButtons = [buttonTypes.BACK, buttonTypes.CONFIRM];
 
 const ColorPicker = ({ onSetColor }) => {
   const [selectedColors, setSelectedColors] = useState([]);
+  const [selectedSwatch, setSelectedSwatch] = useState("");
   const [selectedSimpleColor, setSelectedSimpleColor] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [associatedColors, setAssociatedColors] = useState([]);
@@ -113,7 +114,11 @@ const ColorPicker = ({ onSetColor }) => {
   };
 
   return (
-    <div>
+    <div
+      onClick={() => {
+        setSelectedSwatch("");
+      }}
+    >
       <div className="color-circle-area">
         <div
           className="color-circle-frame"
@@ -195,7 +200,7 @@ const ColorPicker = ({ onSetColor }) => {
                 colorString={selectedColor}
                 displayColor={colorStringToHsl(selectedColor)}
                 radius={largeCircleRadius}
-                isSelected={true}
+                forceOutline={true}
                 onSwatchClick={() => {
                   onAddColor();
                 }}
@@ -213,6 +218,8 @@ const ColorPicker = ({ onSetColor }) => {
       <PickedColors
         radius={radius}
         selectedColors={selectedColors}
+        onSwatchClick={setSelectedSwatch}
+        selectedSwatch={selectedSwatch}
         onDeleteColor={onDeleteColor}
       />
       <div>

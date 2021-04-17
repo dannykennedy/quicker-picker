@@ -23,8 +23,6 @@ export const PickerButton = ({
   const diameter = radius * 2;
   const iconWidth = Math.floor((diameter / 9) * 4);
 
-  console.log("dia", diameter, iconWidth);
-
   const iconStyle = {
     height: iconWidth,
     width: iconWidth,
