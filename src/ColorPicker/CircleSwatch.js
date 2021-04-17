@@ -22,7 +22,7 @@ const CircleSwatch = ({
   const metallic = isMetallic(colorString);
 
   const diameter = radius * 2;
-  const buttonRadius = Math.floor(radius * (4 / 7));
+  const buttonRadius = Math.ceil(radius * (3 / 5));
 
   const borderColorStyle =
     isSelected || forceOutline ? { borderColor: SELECTED_BORDER_COLOR } : {};
