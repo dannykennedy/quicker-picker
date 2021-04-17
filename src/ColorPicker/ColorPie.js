@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   colorTemperatures,
   SELECTED_BORDER_COLOR,
@@ -18,8 +18,6 @@ const ColorPie = ({
   radius,
   fromSimpleColor,
 }) => {
-  const [outlinedSegments, setOutlinedSegments] = useState([]);
-
   const colorTints = simpleMode ? [color] : color.tints;
   const colorTemperature = colorTints[0].colorTemperature;
 

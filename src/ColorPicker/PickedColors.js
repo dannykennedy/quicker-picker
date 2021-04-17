@@ -12,13 +12,13 @@ const PickedColors = ({ selectedColors, radius, onDeleteColor }) => {
             const displayColor = colorStringToHsl(c);
             return (
               <div
+                key={c}
                 style={{
                   margin: `0px 20px 10px 0px`,
                   display: "inline-block",
                 }}
               >
                 <CircleSwatch
-                  key={c}
                   colorString={c}
                   displayColor={displayColor}
                   radius={radius}

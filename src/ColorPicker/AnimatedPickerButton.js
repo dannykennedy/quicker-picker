@@ -1,20 +1,6 @@
-import React, { useState } from "react";
-import {
-  simpleHues,
-  simpleShades,
-  getAssociatedColors,
-} from "./modules/flatColors";
-import { getCirclePoints } from "./modules/pointsOnCircle";
-import PickedColors from "./PickedColors";
-import { colorStringsAreEqual } from "./modules/colorStringHelpers";
+import React from "react";
 import Animate from "./Animate";
-import ColorPie from "./ColorPie";
-import { PickerButton, buttonTypes } from "./PickerButtons";
-import CircleSwatch from "./CircleSwatch";
-import { colorStringToHsl } from "./modules/colorEncode";
-import AnimatedColorPie from "./AnimatedColorPie";
-
-const advancedModeButtons = [buttonTypes.BACK, buttonTypes.CONFIRM];
+import { PickerButton } from "./PickerButtons";
 
 const AnimatedPickerButton = ({
   startCoords,
@@ -23,6 +9,7 @@ const AnimatedPickerButton = ({
   buttonType,
   onButtonClick,
   backgroundColor,
+  speed,
 }) => {
   const [startX, startY] = startCoords;
   const [endX, endY] = endCoords;
@@ -31,6 +18,7 @@ const AnimatedPickerButton = ({
     <Animate
       startCoords={[startX - buttonRadius, startY - buttonRadius]}
       endCoords={[endX - buttonRadius, endY - buttonRadius]}
+      speed={speed}
     >
       <PickerButton
         buttonType={buttonType}

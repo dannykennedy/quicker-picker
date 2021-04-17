@@ -1,17 +1,6 @@
-import React, { useState } from "react";
-import {
-  simpleHues,
-  simpleShades,
-  getAssociatedColors,
-} from "./modules/flatColors";
-import { getCirclePoints } from "./modules/pointsOnCircle";
-import PickedColors from "./PickedColors";
-import { colorStringsAreEqual } from "./modules/colorStringHelpers";
+import React from "react";
 import Animate from "./Animate";
 import ColorPie from "./ColorPie";
-import { PickerButton, buttonTypes } from "./PickerButtons";
-import CircleSwatch from "./CircleSwatch";
-import { colorStringToHsl } from "./modules/colorEncode";
 
 const AnimatedColorPie = ({
   onCircleClick,

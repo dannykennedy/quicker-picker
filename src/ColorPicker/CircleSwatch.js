@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Sparkles } from "./Sparkles";
 import { isMetallic } from "./modules/colorStringHelpers";
-import { DeleteIcon, TickIcon } from "../Icons";
 import { SELECTED_BORDER_COLOR } from "./modules/colorConstants";
-import { PickerButton, buttonTypes } from "./PickerButtons";
-import { getCirclePoints } from "./modules/pointsOnCircle";
 import AnimatedPickerButton from "./AnimatedPickerButton";
 
 const BORDER_WIDTH = 5;
@@ -23,8 +20,6 @@ const CircleSwatch = ({
 }) => {
   const [isOutlined, setIsOutlined] = useState(isSelected);
   const [showingButtons, setShowingButtons] = useState(false);
-
-  const buttonCirclePoints = getCirclePoints(4, radius, radius, radius, true);
 
   const metallic = isMetallic(colorString);
 
@@ -82,6 +77,7 @@ const CircleSwatch = ({
           buttonType={"cancel"}
           onButtonClick={onDeleteColor}
           backgroundColor={"#333"}
+          speed={0.2}
         />
       )}
     </div>

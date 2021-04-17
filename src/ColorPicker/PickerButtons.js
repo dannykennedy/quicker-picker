@@ -21,7 +21,6 @@ export const PickerButton = ({
   return (
     <button
       onClick={() => {
-        console.log("well you go this far", onClick);
         onClick();
       }}
       className="color-picker-button"

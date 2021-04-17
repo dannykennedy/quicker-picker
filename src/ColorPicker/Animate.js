@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import React from "react";
+import styled, { keyframes, css } from "styled-components";
 
 // Styled wrapper that adds animation css
 const AnimatedWrapper = styled.div`
@@ -9,7 +9,7 @@ const AnimatedWrapper = styled.div`
   }};
 `;
 
-const Animate = ({ endCoords, startCoords, children }) => {
+const Animate = ({ endCoords, startCoords, children, speed }) => {
   const [startX, startY] = startCoords;
   const [endX, endY] = endCoords;
 
@@ -20,7 +20,7 @@ const Animate = ({ endCoords, startCoords, children }) => {
 
   const animation = (props) => {
     return css`
-      ${moveAnimation} 0.3s ease-out forwards;
+      ${moveAnimation} ${speed || 0.3}s ease-out forwards;
     `;
   };
 
