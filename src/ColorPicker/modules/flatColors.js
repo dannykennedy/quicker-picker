@@ -1,4 +1,4 @@
-import { colorList } from './colorList';
+import { colorList } from "./colorList";
 
 const allHues = Object.values(colorList);
 
@@ -6,7 +6,8 @@ const groupTints = (colorList) => {
   return Object.values(
     colorList.reduce((acc, curr) => {
       // Group by hue and saturation type
-      const key = curr.hueName + curr.saturationType;
+      const [hueName, saturationType] = curr.hslType;
+      const key = hueName + saturationType;
 
       if (acc[key]) {
         return {
@@ -32,14 +33,22 @@ export const simpleColors = allHues.filter((h) => {
 
 export const getAssociatedColors = (simpleColorName) => {
   return allColors
-    .filter((c) => c.tints.some((t) => t.associations.some((a) => a === simpleColorName)))
+    .filter((c) =>
+      c.tints.some((t) => t.associations.some((a) => a === simpleColorName))
+    )
     .map((c) => {
       return {
         ...c,
-        tints: c.tints.filter((t) => t.associations.some((a) => a === simpleColorName)),
+        tints: c.tints.filter((t) =>
+          t.associations.some((a) => a === simpleColorName)
+        ),
       };
     });
 };
 
-export const simpleHues = simpleColors.filter((c) => !(c.colorTemperature === 'neutral'));
-export const simpleShades = simpleColors.filter((c) => c.colorTemperature === 'neutral');
+export const simpleHues = simpleColors.filter(
+  (c) => !(c.colorTemperature === "neutral")
+);
+export const simpleShades = simpleColors.filter(
+  (c) => c.colorTemperature === "neutral"
+);

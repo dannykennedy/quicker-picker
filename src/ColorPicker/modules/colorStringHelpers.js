@@ -1,5 +1,5 @@
-import { parseColorString } from './colorEncode';
-import { colorNames } from './colorNames';
+import { parseColorString } from "./colorEncode";
+import { hName } from "./colorNames";
 
 export const colorStringsAreEqual = (colorStringA, colorStringB) => {
   if (colorStringA === colorStringB) return true;
@@ -12,6 +12,6 @@ export const colorStringsAreEqual = (colorStringA, colorStringB) => {
 export const isMetallic = (colorString) => {
   const { color } = parseColorString(colorString);
   const isMetal =
-    color === colorNames.GOLD || color === colorNames.SILVER || color === colorNames.BRONZE;
+    color === hName.GOLD || color === hName.SILVER || color === hName.BRONZE;
   return isMetal;
 };
