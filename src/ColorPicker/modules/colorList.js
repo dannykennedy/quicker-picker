@@ -305,7 +305,7 @@ export const colorList = {
   [complexColorNames.lightGoldenBrown]: {
     name: complexColorNames.lightGoldenBrown,
     colorTemperature: colorTemperatures.WARM,
-    hsl: [h.DESAT_GOLD_YELLOW, s.DESAT_GOLD_YELLOW, l.DESAT_LIGHT],
+    hsl: [h.DESAT_GOLDEN_YELLOW, s.DESAT_GOLDEN_YELLOW, l.DESAT_LIGHT],
     hslType: [hName.GOLD_YELLOW, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.BROWN],
     simpleOpts: { isSimpleColor: false },
@@ -313,7 +313,7 @@ export const colorList = {
   [complexColorNames.goldenBrown]: {
     name: complexColorNames.goldenBrown,
     colorTemperature: colorTemperatures.WARM,
-    hsl: [h.DESAT_GOLD_YELLOW, s.DESAT_GOLD_YELLOW, l.DESAT_MID],
+    hsl: [h.DESAT_GOLDEN_YELLOW, s.DESAT_GOLDEN_YELLOW, l.DESAT_MID],
     hslType: [hName.GOLD_YELLOW, sName.DESATURATED, lName.MID],
     associations: [simpleColors.BROWN],
     simpleOpts: { isSimpleColor: false },
@@ -321,7 +321,7 @@ export const colorList = {
   [complexColorNames.darkGoldenBrown]: {
     name: complexColorNames.darkGoldenBrown,
     colorTemperature: colorTemperatures.WARM,
-    hsl: [h.DESAT_GOLD_YELLOW, s.DESAT_GOLD_YELLOW, l.DESAT_DARK],
+    hsl: [h.DESAT_GOLDEN_YELLOW, s.DESAT_GOLDEN_YELLOW, l.DESAT_DARK],
     hslType: [hName.GOLD_YELLOW, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.BROWN],
     simpleOpts: { isSimpleColor: false },
@@ -414,7 +414,7 @@ export const colorList = {
   [complexColorNames.lightOliveGreen]: {
     name: complexColorNames.lightOliveGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_YELLOW_GREEN, s.DESATURATED_YELLOW_GREEN, l.DESAT_LIGHT],
+    hsl: [h.DESAT_YELLOW_GREEN, s.DESAT_YELLOW_GREEN, l.DESAT_LIGHT],
     hslType: [hName.YELLOW_GREEN, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -422,7 +422,7 @@ export const colorList = {
   [complexColorNames.oliveGreen]: {
     name: complexColorNames.oliveGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_YELLOW_GREEN, s.DESATURATED_YELLOW_GREEN, l.DESAT_MID],
+    hsl: [h.DESAT_YELLOW_GREEN, s.DESAT_YELLOW_GREEN, l.DESAT_MID],
     hslType: [hName.YELLOW_GREEN, sName.DESATURATED, lName.MID],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -430,7 +430,7 @@ export const colorList = {
   [complexColorNames.darkOliveGreen]: {
     name: complexColorNames.darkOliveGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_YELLOW_GREEN, s.DESATURATED_YELLOW_GREEN, l.DESAT_DARK],
+    hsl: [h.DESAT_YELLOW_GREEN, s.DESAT_YELLOW_GREEN, l.DESAT_DARK],
     hslType: [hName.YELLOW_GREEN, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -464,7 +464,7 @@ export const colorList = {
   [complexColorNames.lightForestGreen]: {
     name: complexColorNames.lightForestGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_GREEN, s.DESATURATED_GREEN, l.DESAT_LIGHT],
+    hsl: [h.DESAT_GREEN, s.DESAT_GREEN, l.DESAT_LIGHT],
     hslType: [hName.GREEN, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -472,7 +472,7 @@ export const colorList = {
   [complexColorNames.forestGreen]: {
     name: complexColorNames.forestGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_GREEN, s.DESATURATED_GREEN, l.DESAT_MID],
+    hsl: [h.DESAT_GREEN, s.DESAT_GREEN, l.DESAT_MID],
     hslType: [hName.GREEN, sName.DESATURATED, lName.MID],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -480,7 +480,7 @@ export const colorList = {
   [complexColorNames.darkForestGreen]: {
     name: complexColorNames.darkForestGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_GREEN, s.DESATURATED_GREEN, l.DESAT_DARK],
+    hsl: [h.DESAT_GREEN, s.DESAT_GREEN, l.DESAT_DARK],
     hslType: [hName.GREEN, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -520,7 +520,7 @@ export const colorList = {
   [complexColorNames.lightSeaGreen]: {
     name: complexColorNames.lightSeaGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SPRING_GREEN, s.DESATURATED_SPRING_GREEN, l.DESAT_LIGHT],
+    hsl: [h.DESAT_SPRING_GREEN, s.DESAT_SPRING_GREEN, l.DESAT_LIGHT],
     hslType: [hName.SPRING_GREEN, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -528,7 +528,7 @@ export const colorList = {
   [complexColorNames.seaGreen]: {
     name: complexColorNames.seaGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SPRING_GREEN, s.DESATURATED_SPRING_GREEN, l.DESAT_MID],
+    hsl: [h.DESAT_SPRING_GREEN, s.DESAT_SPRING_GREEN, l.DESAT_MID],
     hslType: [hName.SPRING_GREEN, sName.DESATURATED, lName.MID],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -536,7 +536,7 @@ export const colorList = {
   [complexColorNames.darkSeaGreen]: {
     name: complexColorNames.darkSeaGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SPRING_GREEN, s.DESATURATED_SPRING_GREEN, l.DESAT_DARK],
+    hsl: [h.DESAT_SPRING_GREEN, s.DESAT_SPRING_GREEN, l.DESAT_DARK],
     hslType: [hName.SPRING_GREEN, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.GREEN],
     simpleOpts: { isSimpleColor: false },
@@ -571,7 +571,7 @@ export const colorList = {
   [complexColorNames.lightBlueGreen]: {
     name: complexColorNames.lightBlueGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_TURQUOISE, s.DESATURATED_TURQUOISE, l.DESAT_LIGHT],
+    hsl: [h.DESAT_TURQUOISE, s.DESAT_TURQUOISE, l.DESAT_LIGHT],
     hslType: [hName.TURQUOISE, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.GREEN, simpleColors.BLUE],
     simpleOpts: { isSimpleColor: false },
@@ -579,7 +579,7 @@ export const colorList = {
   [complexColorNames.blueGreen]: {
     name: complexColorNames.blueGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_TURQUOISE, s.DESATURATED_TURQUOISE, l.DESAT_MID],
+    hsl: [h.DESAT_TURQUOISE, s.DESAT_TURQUOISE, l.DESAT_MID],
     hslType: [hName.TURQUOISE, sName.DESATURATED, lName.MID],
     associations: [simpleColors.GREEN, simpleColors.BLUE],
     simpleOpts: { isSimpleColor: false },
@@ -587,7 +587,7 @@ export const colorList = {
   [complexColorNames.darkBlueGreen]: {
     name: complexColorNames.darkBlueGreen,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_TURQUOISE, s.DESATURATED_TURQUOISE, l.DESAT_DARK],
+    hsl: [h.DESAT_TURQUOISE, s.DESAT_TURQUOISE, l.DESAT_DARK],
     hslType: [hName.TURQUOISE, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.GREEN, simpleColors.BLUE],
     simpleOpts: { isSimpleColor: false },
@@ -625,7 +625,7 @@ export const colorList = {
   [complexColorNames.lightBlueGray]: {
     name: complexColorNames.lightBlueGray,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SKY_BLUE, s.DESATURATED_SKY_BLUE, l.DESAT_LIGHT],
+    hsl: [h.DESAT_SKY_BLUE, s.DESAT_SKY_BLUE, l.DESAT_LIGHT],
     hslType: [hName.SKY_BLUE, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.BLUE, simpleColors.GRAY],
     simpleOpts: { isSimpleColor: false },
@@ -633,7 +633,7 @@ export const colorList = {
   [complexColorNames.blueGray]: {
     name: complexColorNames.blueGray,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SKY_BLUE, s.DESATURATED_SKY_BLUE, l.DESAT_MID],
+    hsl: [h.DESAT_SKY_BLUE, s.DESAT_SKY_BLUE, l.DESAT_MID],
     hslType: [hName.SKY_BLUE, sName.DESATURATED, lName.MID],
     associations: [simpleColors.BLUE, simpleColors.GRAY],
     simpleOpts: { isSimpleColor: false },
@@ -641,7 +641,7 @@ export const colorList = {
   [complexColorNames.darkBlueGray]: {
     name: complexColorNames.darkBlueGray,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_SKY_BLUE, s.DESATURATED_SKY_BLUE, l.DESAT_DARK],
+    hsl: [h.DESAT_SKY_BLUE, s.DESAT_SKY_BLUE, l.DESAT_DARK],
     hslType: [hName.SKY_BLUE, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.BLUE, simpleColors.GRAY],
     simpleOpts: { isSimpleColor: false },
@@ -677,7 +677,7 @@ export const colorList = {
   [complexColorNames.lightSlateBlue]: {
     name: complexColorNames.lightSlateBlue,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_BLUE, s.DESATURATED_BLUE, l.DESAT_LIGHT],
+    hsl: [h.DESAT_BLUE, s.DESAT_BLUE, l.DESAT_LIGHT],
     hslType: [hName.BLUE, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.BLUE, simpleColors.GRAY],
     simpleOpts: { isSimpleColor: false },
@@ -686,7 +686,7 @@ export const colorList = {
     name: complexColorNames.slateBlue,
     colorTemperature: colorTemperatures.COOL,
     tintValue: l.DARKER_MID,
-    hsl: [h.DESAT_BLUE, s.DESATURATED_BLUE, l.DARKER_MID],
+    hsl: [h.DESAT_BLUE, s.DESAT_BLUE, l.DARKER_MID],
     hslType: [hName.BLUE, sName.DESATURATED, lName.MID],
     associations: [simpleColors.BLUE, simpleColors.GRAY],
     simpleOpts: { isSimpleColor: false },
@@ -695,7 +695,7 @@ export const colorList = {
     name: complexColorNames.darkSlateBlue,
     colorTemperature: colorTemperatures.COOL,
     tintValue: l.DARKEST_DARK,
-    hsl: [h.DESAT_BLUE, s.DESATURATED_BLUE, l.DARKEST_DARK],
+    hsl: [h.DESAT_BLUE, s.DESAT_BLUE, l.DARKEST_DARK],
     hslType: [hName.BLUE, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.BLUE, simpleColors.GRAY, simpleColors.BLACK],
     simpleOpts: { isSimpleColor: false },
@@ -730,8 +730,8 @@ export const colorList = {
     name: complexColorNames.lightDuskyBluePurple,
     colorTemperature: colorTemperatures.COOL,
     degree: h.DESAT_BLUE_PURPLE,
-    saturation: s.DESATURATED_BLUE_PURPLE,
-    hsl: [h.DESAT_BLUE_PURPLE, s.DESATURATED_BLUE_PURPLE, l.DESAT_LIGHT],
+    saturation: s.DESAT_BLUE_PURPLE,
+    hsl: [h.DESAT_BLUE_PURPLE, s.DESAT_BLUE_PURPLE, l.DESAT_LIGHT],
     hslType: [hName.BLUE_PURPLE, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
@@ -739,7 +739,7 @@ export const colorList = {
   [complexColorNames.duskyBluePurple]: {
     name: complexColorNames.duskyBluePurple,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_BLUE_PURPLE, s.DESATURATED_BLUE_PURPLE, l.DESAT_MID],
+    hsl: [h.DESAT_BLUE_PURPLE, s.DESAT_BLUE_PURPLE, l.DESAT_MID],
     hslType: [hName.BLUE_PURPLE, sName.DESATURATED, lName.MID],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
@@ -747,7 +747,7 @@ export const colorList = {
   [complexColorNames.darkDuskyBluePurple]: {
     name: complexColorNames.darkDuskyBluePurple,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_BLUE_PURPLE, s.DESATURATED_BLUE_PURPLE, l.DESAT_DARK],
+    hsl: [h.DESAT_BLUE_PURPLE, s.DESAT_BLUE_PURPLE, l.DESAT_DARK],
     hslType: [hName.BLUE_PURPLE, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
@@ -785,7 +785,7 @@ export const colorList = {
   [complexColorNames.lightDuskyPurple]: {
     name: complexColorNames.lightDuskyPurple,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_PURPLE, s.DESATURATED_PURPLE, l.DESAT_LIGHT],
+    hsl: [h.DESAT_PURPLE, s.DESAT_PURPLE, l.DESAT_LIGHT],
     hslType: [hName.PURPLE, sName.DESATURATED, lName.LIGHT],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
@@ -793,7 +793,7 @@ export const colorList = {
   [complexColorNames.duskyPurple]: {
     name: complexColorNames.duskyPurple,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_PURPLE, s.DESATURATED_PURPLE, l.DESAT_MID],
+    hsl: [h.DESAT_PURPLE, s.DESAT_PURPLE, l.DESAT_MID],
     hslType: [hName.PURPLE, sName.DESATURATED, lName.MID],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
@@ -801,7 +801,7 @@ export const colorList = {
   [complexColorNames.darkDuskyPurple]: {
     name: complexColorNames.darkDuskyPurple,
     colorTemperature: colorTemperatures.COOL,
-    hsl: [h.DESAT_PURPLE, s.DESATURATED_PURPLE, l.DESAT_DARK],
+    hsl: [h.DESAT_PURPLE, s.DESAT_PURPLE, l.DESAT_DARK],
     hslType: [hName.PURPLE, sName.DESATURATED, lName.DARK],
     associations: [simpleColors.PURPLE],
     simpleOpts: { isSimpleColor: false },
