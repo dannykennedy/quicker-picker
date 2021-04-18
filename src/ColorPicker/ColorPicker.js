@@ -7,7 +7,7 @@ import {
 import { getCirclePoints } from "./modules/pointsOnCircle";
 import PickedColors from "./PickedColors";
 import { colorStringsAreEqual } from "./modules/colorStringHelpers";
-import { buttonTypes } from "./PickerButtons";
+import { buttonTypes } from "./PickerButton";
 import CircleSwatch from "./CircleSwatch";
 import { colorStringToHsl } from "./modules/colorEncode";
 import AnimatedColorPie from "./AnimatedColorPie";

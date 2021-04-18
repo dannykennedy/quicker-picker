@@ -1,5 +1,4 @@
 import React from "react";
-import { BUTTON_TEXT_COLOR } from "./modules/colorConstants";
 import {
   BackArrow,
   TickIcon,
@@ -27,7 +26,6 @@ export const PickerButton = ({
   const iconStyle = {
     height: iconWidth,
     width: iconWidth,
-    color: iconColor || BUTTON_TEXT_COLOR,
     position: "absolute",
   };
 
@@ -40,6 +38,7 @@ export const PickerButton = ({
       style={{
         width: diameter,
         height: diameter,
+        color: "inherit",
         backgroundColor: backgroundColor || `hsl(213, 5%, 24%)`,
         cursor: "pointer",
       }}

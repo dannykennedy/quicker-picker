@@ -76,6 +76,7 @@ const CircleSwatch = ({
           backgroundColor={"#BBB"}
           iconColor={"#333"}
           speed={0.2}
+          iconHoverColor={displayColor}
         />
       )}
     </div>

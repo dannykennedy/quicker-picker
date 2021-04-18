@@ -1,6 +1,6 @@
 import React from "react";
 import Animate from "./Animate";
-import { PickerButton } from "./PickerButtons";
+import { PickerButton } from "./PickerButton";
 
 const AnimatedPickerButton = ({
   startCoords,
@@ -10,6 +10,7 @@ const AnimatedPickerButton = ({
   onButtonClick,
   backgroundColor,
   iconColor,
+  iconHoverColor,
   speed,
 }) => {
   const [startX, startY] = startCoords;
@@ -20,13 +21,14 @@ const AnimatedPickerButton = ({
       startCoords={[startX - buttonRadius, startY - buttonRadius]}
       endCoords={[endX - buttonRadius, endY - buttonRadius]}
       speed={speed}
+      iconColor={iconColor}
+      iconHoverColor={iconHoverColor}
     >
       <PickerButton
         buttonType={buttonType}
         radius={buttonRadius}
         onClick={onButtonClick}
         backgroundColor={backgroundColor}
-        iconColor={iconColor}
       />
     </Animate>
   );
