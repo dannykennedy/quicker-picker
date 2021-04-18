@@ -65,7 +65,7 @@ const ColorPicker = ({ onSetColor }) => {
   const buttonWidthPercent = 25;
   const outerCircleWidth = 180;
   const buttonCircleWidth = 300;
-  const innerCircleWidth = 60;
+  const innerCircleWidth = 64;
   const rOuter = outerCircleWidth / 2; // Radius of outer circle
   const rInner = innerCircleWidth / 2; // Radius of inner circle
   const rButtons = buttonCircleWidth / 2;
