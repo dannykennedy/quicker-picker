@@ -13,7 +13,7 @@ import { colorStringToHsl } from "./modules/colorEncode";
 import AnimatedColorPie from "./AnimatedColorPie";
 import AnimatedPickerButton from "./AnimatedPickerButton";
 
-const advancedModeButtons = [buttonTypes.BACK, buttonTypes.CONFIRM];
+const advancedModeButtons = [buttonTypes.BACK];
 
 const ColorPicker = ({ onSetColor }) => {
   const [selectedColors, setSelectedColors] = useState([]);
@@ -200,10 +200,9 @@ const ColorPicker = ({ onSetColor }) => {
                 colorString={selectedColor}
                 displayColor={colorStringToHsl(selectedColor)}
                 radius={largeCircleRadius}
-                forceOutline={true}
-                onSwatchClick={() => {
-                  onAddColor();
-                }}
+                isSelected={true}
+                onSwatchClick={onAddColor}
+                button={{ type: "confirm", onClick: onAddColor }}
                 icon="tick"
                 style={{
                   position: "absolute",

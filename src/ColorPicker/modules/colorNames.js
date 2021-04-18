@@ -68,7 +68,7 @@ export const complexColorNames = {
   salmon: "salmon",
   red: "red",
   darkRed: "dark red",
-  lightRedBrown: "light red-brown",
+  lightRedBrown: "dusky salmon",
   redBrown: "red-brown",
   darkRedBrown: "dark red-brown",
 

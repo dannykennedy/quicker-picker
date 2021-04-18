@@ -33,6 +33,12 @@ const PickedColors = ({
                   onSwatchClick={() => {
                     onSwatchClick(c);
                   }}
+                  button={{
+                    type: "cancel",
+                    onClick: () => {
+                      onDeleteColor(c);
+                    },
+                  }}
                   isSelected={isSelected}
                   style={{ position: "relative", display: "inline-block" }}
                   onDeleteColor={() => {

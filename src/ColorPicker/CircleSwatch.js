@@ -17,6 +17,7 @@ const CircleSwatch = ({
   style,
   icon,
   onDeleteColor,
+  button,
   forceOutline,
 }) => {
   const metallic = isMetallic(colorString);
@@ -55,7 +56,7 @@ const CircleSwatch = ({
           height: diameter - TOTAL_BORDER_WIDTH,
         }}
       >
-        {metallic && <Sparkles />}
+        {metallic && !isSelected && <Sparkles />}
         <div
           className="color-picker-swatch-inner"
           onClick={(e) => {
@@ -70,8 +71,8 @@ const CircleSwatch = ({
           startCoords={[diameter - buttonRadius, buttonRadius]}
           endCoords={[diameter - 5, 5]}
           buttonRadius={buttonRadius}
-          buttonType={"cancel"}
-          onButtonClick={onDeleteColor}
+          buttonType={button.type}
+          onButtonClick={button.onClick}
           backgroundColor={"#BBB"}
           iconColor={"#333"}
           speed={0.2}
