@@ -7,8 +7,8 @@ export const Sparkles = ({ right, top }) => {
     <SparklesIcon
       style={{
         position: "absolute",
-        right: right || 5,
-        top: top || 5,
+        right: right === undefined ? 5 : right,
+        top: top === undefined ? 5 : top,
         width: 15,
         height: 15,
         zIndex: 4,

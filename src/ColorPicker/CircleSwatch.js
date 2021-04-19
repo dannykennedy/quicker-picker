@@ -52,11 +52,11 @@ const CircleSwatch = ({
         className="color-picker-swatch"
         style={{
           cursor: "pointer",
-          width: diameter - TOTAL_BORDER_WIDTH,
+          width: diameter,
           height: diameter - TOTAL_BORDER_WIDTH,
         }}
       >
-        {metallic && !isSelected && <Sparkles />}
+        {metallic && !isSelected && <Sparkles right={0} top={0} />}
         <div
           className="color-picker-swatch-inner"
           onClick={(e) => {
