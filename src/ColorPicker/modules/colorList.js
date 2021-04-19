@@ -354,7 +354,7 @@ export const colorList = {
     saturation: s.YELLOW,
     hsl: [h.YELLOW, s.YELLOW, l.DARK],
     hslType: [hName.YELLOW, sName.SATURATED, lName.DARK],
-    associations: [simpleColors.YELLOW, simpleColors.BROWN],
+    associations: [simpleColors.YELLOW],
     simpleOpts: { isSimpleColor: false },
   },
   // YELLOW-BROWN

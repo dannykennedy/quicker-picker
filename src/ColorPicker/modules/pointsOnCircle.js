@@ -3,6 +3,8 @@ const NUM_RADIANS_IN_CIRCLE = Math.PI * 2;
 // 90 degrees is one quarter of this
 const NINETY_DEGREES = NUM_RADIANS_IN_CIRCLE / 4;
 
+// const getPointsOnCircle = (numPoints, radius, centerXY, offset, rotate, simple);
+
 // Calculates an arbitrary number of points on a circle,
 // Given the radius and centre coordinates of the circle
 export const getCirclePoints = (

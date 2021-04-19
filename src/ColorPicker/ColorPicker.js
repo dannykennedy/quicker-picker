@@ -60,12 +60,12 @@ const ColorPicker = ({ onSetColor }) => {
 
   const simpleMode = selectedColor === "";
 
-  const circleWidthPercent = 28;
-  const selectedCircleWidthPercent = 30;
+  const circleWidthPercent = 30;
+  const selectedCircleWidthPercent = 34;
   const buttonWidthPercent = 25;
-  const outerCircleWidth = 180;
-  const buttonCircleWidth = 300;
-  const innerCircleWidth = 64;
+  const outerCircleWidth = 200;
+  const buttonCircleWidth = 330;
+  const innerCircleWidth = 70;
   const rOuter = outerCircleWidth / 2; // Radius of outer circle
   const rInner = innerCircleWidth / 2; // Radius of inner circle
   const rButtons = buttonCircleWidth / 2;
@@ -95,7 +95,7 @@ const ColorPicker = ({ onSetColor }) => {
     rOuter,
     rOuter,
     rOuter,
-    false,
+    selectedSimpleColor === "brown" || associatedColors.length === 8,
     true
   );
   const radius = Math.ceil(((outerCircleWidth / 100) * circleWidthPercent) / 2);
@@ -142,6 +142,7 @@ const ColorPicker = ({ onSetColor }) => {
                   endCoords={buttonCirclePoints[i]}
                   buttonType={btnType}
                   buttonRadius={buttonRadius}
+                  iconColor={"#CCC"}
                   onButtonClick={() => {
                     buttonFuncs[btnType]();
                   }}

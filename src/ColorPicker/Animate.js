@@ -7,6 +7,9 @@ const AnimatedWrapper = styled.div`
   animation: ${(props) => {
     return props.cssAnimation;
   }};
+  color: ${(props) => {
+    return props.iconColor;
+  }};
   &:hover {
     color: ${(props) => {
       return props.iconHoverColor;
@@ -20,6 +23,7 @@ const Animate = ({
   startCoords,
   children,
   speed,
+  iconColor,
   iconHoverColor,
 }) => {
   const [startX, startY] = startCoords;
@@ -37,7 +41,11 @@ const Animate = ({
   };
 
   return (
-    <AnimatedWrapper cssAnimation={animation} iconHoverColor={iconHoverColor}>
+    <AnimatedWrapper
+      cssAnimation={animation}
+      iconColor={iconColor}
+      iconHoverColor={iconHoverColor}
+    >
       {children}
     </AnimatedWrapper>
   );
