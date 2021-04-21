@@ -76,14 +76,6 @@
   position: absolute;
 }
 
-.color-picker-swatch-inner {
-  border-color: transparent;
-}
-
-.color-picker-swatch-inner:hover {
-  border-color: hsl(213, 5%, 80%);
-}
-
 .picker-segment {
   fill: hsl(213, 5%, 28%);
   transition: 0.2s;

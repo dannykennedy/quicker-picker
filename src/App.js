@@ -20,7 +20,9 @@ function App() {
           alignItems: "center",
         }}
       >
-        <span style={{ marginRight: 20 }}>Dark mode</span>
+        <span style={{ marginRight: 20, color: darkMode ? "#ccc" : "#333" }}>
+          Dark mode
+        </span>
         <label>
           <Switch onChange={setDarkMode} checked={darkMode} />
         </label>

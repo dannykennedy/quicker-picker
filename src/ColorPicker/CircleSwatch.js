@@ -1,11 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Sparkles } from "./Sparkles";
 import { isMetallic } from "./modules/colorStringHelpers";
-import { SELECTED_BORDER_COLOR } from "./modules/colorConstants";
 import AnimatedPickerButton from "./AnimatedPickerButton";
+import { ThemeContext } from "./QuickerPicker";
+import styled from "styled-components";
 
 const BORDER_WIDTH = 5;
 const TOTAL_BORDER_WIDTH = BORDER_WIDTH * 2;
+
+// Styled wrapper that adds animation css
+const BorderedSwatch = styled.div`
+  border-radius: 50%;
+  border-style: solid;
+  position: absolute;
+  z-index: 2;
+  border-color: ${(props) => {
+    return props.borderColor;
+  }};
+  width: ${(props) => {
+    return props.width + "px";
+  }};
+  height: ${(props) => {
+    return props.height + "px";
+  }};
+  border-color: ${(props) => {
+    return props.borderColor;
+  }};
+  border-width: ${(props) => {
+    return props.borderWidth + "px";
+  }};
+  background-color: ${(props) => {
+    return props.backgroundColor;
+  }};
+  &:hover {
+    border-color: ${(props) => {
+      return props.hoverBorderColor;
+    }};
+    transition: 0.2s;
+  }
+`;
 
 const CircleSwatch = ({
   hex,
@@ -20,25 +53,11 @@ const CircleSwatch = ({
   button,
   forceOutline,
 }) => {
+  const theme = useContext(ThemeContext);
   const metallic = isMetallic(colorString);
 
   const diameter = radius * 2;
   const buttonRadius = Math.ceil(radius * (3 / 5));
-
-  const borderColorStyle =
-    isSelected || forceOutline ? { borderColor: SELECTED_BORDER_COLOR } : {};
-
-  const swatchStyle = {
-    width: diameter - TOTAL_BORDER_WIDTH,
-    height: diameter - TOTAL_BORDER_WIDTH,
-    borderRadius: "50%",
-    borderWidth: BORDER_WIDTH,
-    borderStyle: "solid",
-    backgroundColor: displayColor,
-    position: "absolute",
-    zIndex: 2,
-    ...borderColorStyle,
-  };
 
   return (
     <div
@@ -57,13 +76,19 @@ const CircleSwatch = ({
         }}
       >
         {metallic && !isSelected && <Sparkles right={0} top={0} />}
-        <div
-          className="color-picker-swatch-inner"
+        <BorderedSwatch
+          width={diameter - TOTAL_BORDER_WIDTH}
+          height={diameter - TOTAL_BORDER_WIDTH}
+          borderWidth={BORDER_WIDTH}
+          backgroundColor={displayColor}
+          hoverBorderColor={theme.selectedBorderColor}
+          borderColor={
+            isSelected ? theme.selectedBorderColor : theme.unselectedBorderColor
+          }
           onClick={(e) => {
             e.stopPropagation();
             onSwatchClick && onSwatchClick();
           }}
-          style={swatchStyle}
         />
       </div>
       {isSelected && (

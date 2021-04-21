@@ -18,6 +18,5 @@ export const lName = {
   CUSTOM: "",
 };
 
-export const SELECTED_BORDER_COLOR = "hsl(213, 5%, 80%)";
 export const PICKER_BACKGROUND_COLOR = "hsl(213, 5%, 24%)";
 export const BUTTON_TEXT_COLOR = "hsl(213, 5%, 80%)";
