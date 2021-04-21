@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import QuickerPicker from "./ColorPicker/QuickerPicker";
-import "react-toggle/style.css";
-import Toggle from "react-toggle";
 import "./App.css";
 import Switch from "react-switch";
 
