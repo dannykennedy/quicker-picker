@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BackArrow,
   TickIcon,
   DeleteIcon,
   TrashSolidIcon as Trash,
 } from "../Icons";
+import { ThemeContext } from "./QuickerPicker";
 
 export const buttonTypes = {
   CONFIRM: "confirm",
@@ -20,6 +21,8 @@ export const PickerButton = ({
   backgroundColor,
   iconColor,
 }) => {
+  const theme = useContext(ThemeContext);
+
   const diameter = radius * 2;
   const iconWidth = Math.floor((diameter / 9) * 4);
 
@@ -27,6 +30,7 @@ export const PickerButton = ({
     height: iconWidth,
     width: iconWidth,
     position: "absolute",
+    color: iconColor || theme.textColor,
   };
 
   return (
@@ -39,7 +43,7 @@ export const PickerButton = ({
         width: diameter,
         height: diameter,
         color: "inherit",
-        backgroundColor: backgroundColor || `hsl(213, 5%, 24%)`,
+        backgroundColor: backgroundColor || theme.backgroundColor,
         cursor: "pointer",
       }}
     >

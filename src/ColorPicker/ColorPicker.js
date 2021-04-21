@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   simpleHues,
   simpleShades,
@@ -12,10 +12,13 @@ import CircleSwatch from "./CircleSwatch";
 import { colorStringToHsl } from "./modules/colorEncode";
 import AnimatedColorPie from "./AnimatedColorPie";
 import AnimatedPickerButton from "./AnimatedPickerButton";
+import { ThemeContext } from "./QuickerPicker";
 
 const advancedModeButtons = [buttonTypes.BACK];
 
 const ColorPicker = ({ onSetColor }) => {
+  const theme = useContext(ThemeContext);
+
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSwatch, setSelectedSwatch] = useState("");
   const [selectedSimpleColor, setSelectedSimpleColor] = useState("");
@@ -121,10 +124,11 @@ const ColorPicker = ({ onSetColor }) => {
     >
       <div className="color-circle-area">
         <div
-          className="color-circle-frame"
+          className="color-palette-circle"
           style={{
             width: outerCircleWidth + 70,
             height: outerCircleWidth + 70,
+            backgroundColor: theme.backgroundColor,
           }}
         >
           <div
@@ -142,7 +146,6 @@ const ColorPicker = ({ onSetColor }) => {
                   endCoords={buttonCirclePoints[i]}
                   buttonType={btnType}
                   buttonRadius={buttonRadius}
-                  iconColor={"#CCC"}
                   onButtonClick={() => {
                     buttonFuncs[btnType]();
                   }}
@@ -222,7 +225,7 @@ const ColorPicker = ({ onSetColor }) => {
         selectedSwatch={selectedSwatch}
         onDeleteColor={onDeleteColor}
       />
-      <div>
+      <div style={{ color: theme.textColor }}>
         {selectedColors.map((c) => {
           return <p key={c}>{c}</p>;
         })}

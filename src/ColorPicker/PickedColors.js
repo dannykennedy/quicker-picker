@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import CircleSwatch from "./CircleSwatch";
 import { colorStringToHsl } from "./modules/colorEncode";
 import { colorStringsAreEqual } from "./modules/colorStringHelpers";
+import { ThemeContext } from "./QuickerPicker";
 
 const PickedColors = ({
   selectedColors,
@@ -10,10 +11,15 @@ const PickedColors = ({
   onSwatchClick,
   selectedSwatch,
 }) => {
+  const theme = useContext(ThemeContext);
+
   return (
     <div>
-      <p>Selected colors</p>
-      <div className="color-picker-picked-colors-area">
+      <p style={{ color: theme.textColor }}>Selected colors</p>
+      <div
+        className="color-picker-picked-colors-area"
+        style={{ backgroundColor: theme.backgroundColor }}
+      >
         {selectedColors &&
           selectedColors.map((c) => {
             const displayColor = colorStringToHsl(c);

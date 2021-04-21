@@ -1,14 +1,40 @@
-import ColorSelect from "./ColorPicker/ColorSelect";
+import React, { useState } from "react";
+import QuickerPicker from "./ColorPicker/QuickerPicker";
+import "react-toggle/style.css";
+import Toggle from "react-toggle";
 import "./App.css";
+import Switch from "react-switch";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <div className="App">
-      <ColorSelect
-        onSetColor={(option) => {
-          console.log(option);
+    <div
+      className="App"
+      style={{ backgroundColor: darkMode ? "#12263f" : "white" }}
+    >
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          height: 30,
+          alignItems: "center",
         }}
-      />
+      >
+        <span style={{ marginRight: 20 }}>Dark mode</span>
+        <label>
+          <Switch onChange={setDarkMode} checked={darkMode} />
+        </label>
+      </div>
+      <div className="select-wrapper">
+        <QuickerPicker
+          onSetColor={(option) => {
+            console.log(option);
+          }}
+          mode={darkMode ? "dark" : "light"}
+        />
+      </div>
     </div>
   );
 }
